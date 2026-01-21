@@ -7,7 +7,7 @@
     To run:
 
         $ gcc -Wall -Wextra -Werror -fsanitize=address -g \
-            main.c list.c node.c -o singly_linked_test
+            test/main.c src/list.c src/node.c -Iinclude -o singly_linked_test
 
         $ ./singly_linked_test
 */
