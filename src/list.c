@@ -1,6 +1,6 @@
 #include <stdlib.h> // for malloc and free
 // #include <stdio.h>  // for printf (debugging)
-#include "list.h"
+#include "../include/list.h"
 
 List *list_create(void)
 {
@@ -21,19 +21,19 @@ void list_destroy(List *list)
         Free all nodes before the list itself.
         ^ iterate through list and free each node.
     */
-    Node *current = list->head;
+    ListNode *current = list->head;
     while (current)
     {
-        Node *next = current->next; // store pointer to next node
-        node_destroy(current);      // free current node
-        current = next;             // move to next node
+        ListNode *next = current->next; // store pointer to next node
+        node_destroy(current);          // free current node
+        current = next;                 // move to next node
     }
     free(list); // free the memory allocated for the list
 }
 
 bool list_push(List *list, int data)
 {
-    Node *node = node_create(data); // create a new node
+    ListNode *node = node_create(data); // create a new node
 
     if (!node)
     {
@@ -48,8 +48,8 @@ bool list_push(List *list, int data)
 
 bool list_remove(List *list, int data)
 {
-    Node *current = list->head;
-    Node *prev = NULL;
+    ListNode *current = list->head;
+    ListNode *prev = NULL;
 
     // Traverse list until we find the node to remove/the end
     while (current)
