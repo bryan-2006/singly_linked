@@ -5,6 +5,11 @@
 #include "../include/list.h"
 
 /*
+    $ git submodule add <url-to-singly-linked-repo> lib/singly_linked
+
+    // to init and update to correct commit as well as init submodules of submodules:
+    $ git submodule update --init --recursive
+
     $ gcc lib/singly_linked/src/list.c lib/singly_linked/src/list_node.c lib/singly_linked/test/main.c -Ilib/singly_linked/include -o singly_linked_test
 
     $ valgrind --leak-check=full ./singly_linked_test
@@ -14,7 +19,7 @@
     ./singly_linked_test  // the executable to run
 
 
-    Valgrind is a runtime memory checker.
+    Valgrind is a runtime memory checker (for DEV not PROD).
     Runs and reports:
     - memory leaks
     - double frees
