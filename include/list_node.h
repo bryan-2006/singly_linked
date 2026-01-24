@@ -32,12 +32,12 @@ typedef struct ListNode
     Allocates memory on the heap for a new ListNode
     Ownership of returned pointer is transferred to caller
 */
-ListNode *node_create(int data);
+ListNode *list_node_create(int data);
 
 /*
     Frees memory allocated for a ListNode
     The pointer is INVALID after this call
 */
-void node_destroy(ListNode *node); // same as (ListNode *node); just style preference
+void list_node_destroy(ListNode *node); // same as (ListNode *node); just style preference
 
 #endif // end of NODE_H

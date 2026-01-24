@@ -25,7 +25,7 @@ void list_destroy(List *list)
     while (current)
     {
         ListNode *next = current->next; // store pointer to next node
-        node_destroy(current);          // free current node
+        list_node_destroy(current);     // free current node
         current = next;                 // move to next node
     }
     free(list); // free the memory allocated for the list
@@ -33,7 +33,7 @@ void list_destroy(List *list)
 
 bool list_push(List *list, int data)
 {
-    ListNode *node = node_create(data); // create a new node
+    ListNode *node = list_node_create(data); // create a new node
 
     if (!node)
     {
@@ -69,8 +69,8 @@ bool list_remove(List *list, int data)
             {                               // case 1
                 list->head = current->next; // new head is current (head)'s next
             }
-            node_destroy(current); // free memory of removed node
-            return true;           // successful removal
+            list_node_destroy(current); // free memory of removed node
+            return true;                // successful removal
         }
         else
         {

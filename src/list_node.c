@@ -2,7 +2,7 @@
 // #include <stdio.h>  // for printf (debugging)
 #include "../include/list_node.h"
 
-ListNode *node_create(int data)
+ListNode *list_node_create(int data)
 {
     ListNode *node = malloc(sizeof(ListNode)); // allocate memory for a ListNode
 
@@ -16,7 +16,7 @@ ListNode *node_create(int data)
     return node;       // return pointer to the newly created node
 }
 
-void node_destroy(ListNode *node)
+void list_node_destroy(ListNode *node)
 {
     // does not update list pointers; caller must handle that
     // if (node) {
